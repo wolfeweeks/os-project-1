@@ -65,10 +65,13 @@ int main(int argc, char *argv[])
   int j;
   for (j = 0; j < numOfIterations; j++)
   {
-    sleep(3);
+    sleep(sleepTime);
     wait(NULL);
-    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
-            i, (long)getpid(), (long)getppid(), (long)childpid);
+
+    fprintf(stderr, "i: %d | ", i);
+    fprintf(stderr, "Process ID: %ld | ", (long)getpid());
+    fprintf(stderr, "Parent ID: %ld | ", (long)getppid());
+    fprintf(stderr, "Child ID: %ld\n", (long)childpid);
   }
   return 0;
 }
