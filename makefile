@@ -1,2 +1,9 @@
+
+GCC = gcc #an unnecessary pattern
+.SUFFIXES: #none for this project (no object files)
+
 chain: simpleChain.c
-	gcc simpleChain.c -o chain
+	$(GCC) simpleChain.c -o chain
+
+clean:
+	rm -rf *.o
