@@ -72,6 +72,16 @@ int main(int argc, char *argv[])
     fprintf(stderr, "Process ID: %ld | ", (long)getpid());
     fprintf(stderr, "Parent ID: %ld | ", (long)getppid());
     fprintf(stderr, "Child ID: %ld\n", (long)childpid);
+
+    char *mybuf = (char *)malloc((numOfChars + 1) * sizeof(char));
+    int charIndex;
+    for (charIndex = 0; charIndex < numOfChars; charIndex++)
+    {
+      mybuf[charIndex] = fgetc(stdin);
+    }
+    mybuf[numOfChars] = '\0';
+
+    fprintf(stderr, "%ld: %s\n", (long)getpid(), mybuf);
   }
   return 0;
 }
